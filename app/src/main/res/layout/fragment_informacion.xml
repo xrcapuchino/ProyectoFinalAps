@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:text="Editar Perfil"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etNombrePerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tu Nombre Completo"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/etCorreoPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tu Correo Electrónico"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btnGuardarPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Actualizar Perfil"/>
+
+</LinearLayout>

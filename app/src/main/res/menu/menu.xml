@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Mis Tareas" />
+    <item
+        android:id="@+id/nav_nueva_tarea"
+        android:title="Nueva Tarea" />
+    <item
+        android:id="@+id/nav_agenda"
+        android:title="Agenda" />
+    <item
+        android:id="@+id/informacion"
+        android:title="Perfil" />
+    <item
+        android:id="@+id/cerrar_sesion"
+        android:title="Cerrar App" />
+</menu>
