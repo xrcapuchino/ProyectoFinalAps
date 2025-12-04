@@ -1,5 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+<color name="black">#212121</color>
+<color name="white">#FFFFFF</color>
+<color name="naranja_principal">#FF5722</color>
+<color name="naranja_suave">#FFCCBC</color>
+<color name="azul_escolar">#2894FF</color>
+<color name="azul_claro">#BBDEFB</color>
+<color name="fondo_oscuro">#121212</color>
+<color name="fondo_limpio">#F7F9FC</color>
+<color name="gris_input">#1E1E1E</color>
+<color name="gris_input_fondo">#F0F0F0</color>
+<color name="texto_gris">#757575</color>
+<color name="texto_titulo">#263238</color>
+<color name="texto_secundario">#546E7A</color>
 </resources>

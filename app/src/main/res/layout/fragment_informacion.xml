@@ -1,38 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="30dp"
-    android:gravity="center_horizontal">
+    android:background="@color/fondo_limpio"
+    android:fillViewport="true">
 
-    <TextView
-        android:text="Editar Perfil"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/etNombrePerfil"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tu Nombre Completo"
-        android:layout_marginBottom="20dp"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etCorreoPerfil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tu Correo Electrónico"
-        android:inputType="textEmailAddress"
-        android:layout_marginBottom="30dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="24dp"
+            android:elevation="4dp"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnGuardarPerfil"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Actualizar Perfil"/>
+            <TextView
+                android:text="Perfil de Usuario"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/azul_escolar"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/perfil"
+                android:background="@drawable/bg_input_tech"
+                android:padding="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:text="Nombre del Alumno"
+                        android:textColor="@color/azul_escolar"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/etNombrePerfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_tech"
+                        android:backgroundTint="@color/gris_input_fondo"
+                        android:padding="16dp"
+                        android:hint="Tu Nombre Completo"
+                        android:inputType="textPersonName"
+                        android:textSize="16sp"
+                        android:textColor="@color/texto_titulo"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:text="Correo Institucional / Personal"
+                        android:textColor="@color/azul_escolar"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/etCorreoPerfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_tech"
+                        android:backgroundTint="@color/gris_input_fondo"
+                        android:padding="16dp"
+                        android:hint="correo@ejemplo.com"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16sp"
+                        android:textColor="@color/texto_secundario"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnGuardarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Actualizar Datos"
+                android:textSize="16sp"
+                android:backgroundTint="@color/naranja_principal"
+                app:cornerRadius="16dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

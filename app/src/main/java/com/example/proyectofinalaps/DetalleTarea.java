@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,7 +22,8 @@ public class DetalleTarea extends Fragment {
     EditText etTitulo, etDescripcion, etFecha;
     Spinner spinnerMateria;
     RadioGroup rgPrioridad;
-    Button btnActualizar, btnRegresar;
+    Button btnActualizar;
+    TextView btnRegresar;
 
     int idTarea = -1; // Para guardar el ID que recibimos
     boolean estadoActual = false; // Para no perder si estaba completada o no

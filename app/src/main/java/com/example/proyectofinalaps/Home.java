@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ public class Home extends Fragment {
     TareaAdapter adapter;
     List<Tarea> listaTareas;
     Base dbHelper;
-    TextView tvSinTareas;
+    LinearLayout tvSinTareas;
     Button btnClassroom; // 1. Declaramos el botón
 
     @Override

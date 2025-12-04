@@ -1,53 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#F5F5F5"
+    android:background="@color/fondo_limpio"
     tools:context=".Home">
 
-    <Button
-        android:id="@+id/btnClassroom"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Ir a Google Classroom"
-        android:drawableStart="@android:drawable/ic_menu_view"
-        android:drawablePadding="10dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:backgroundTint="#0F9D58"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mis Tareas Pendientes:"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"
-        android:textColor="#333333"/>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"> <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_home"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:background="@color/white"
+        android:padding="24dp"
+        android:elevation="4dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvSinTareas"
+            android:text="Mis Tareas"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/azul_escolar"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClassroom"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Ir al Classroom"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="#0090FF"
+            app:iconGravity="textStart"
+            app:iconPadding="16dp"
+            app:iconTint="@color/white"
+            app:cornerRadius="16dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Todo listo! No tienes tareas pendientes."
-            android:textSize="16sp"
-            android:layout_gravity="center"
-            android:visibility="gone"/>
-    </FrameLayout>
+            android:text="Pendientes por realizar"
+            android:textColor="@color/texto_secundario"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"/>
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="20dp"
+                android:scrollbars="vertical" />
+
+            <LinearLayout
+                android:id="@+id/tvSinTareas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_launcher_foreground"
+                    app:tint="@color/texto_gris"
+                    android:alpha="0.3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¡Todo limpio! 🎉"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/texto_titulo"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No tienes tareas pendientes hoy"
+                    android:textSize="14sp"
+                    android:textColor="@color/texto_secundario"/>
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
 </LinearLayout>

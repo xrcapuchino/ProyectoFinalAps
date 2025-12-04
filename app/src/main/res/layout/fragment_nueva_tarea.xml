@@ -1,123 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo_limpio"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:background="#F5F5F5">
+        android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nueva Tarea"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#333333"
-            android:gravity="center"
-            android:layout_marginBottom="20dp"/>
+            android:background="#FFFFFF"
+            android:padding="24dp"
+            android:elevation="4dp"
+            android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
+            <TextView
+                android:text="Crear Tarea"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/azul_escolar"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+            android:orientation="vertical"
+            android:padding="24dp">
 
-            <EditText
-                android:id="@+id/etTitulo"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Título de la tarea"
-                android:inputType="textCapSentences"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="24dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
 
-            <EditText
-                android:id="@+id/etDescripcion"
+                    <TextView
+                        android:text="Objetivo Principal"
+                        android:textColor="@color/azul_escolar"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/etTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_tech"
+                        android:backgroundTint="@color/gris_input_fondo"
+                        android:padding="16dp"
+                        android:hint="Ej. Proyecto de Android"
+                        android:inputType="textCapSentences"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/texto_titulo"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:text="Instrucciones / Detalles"
+                        android:textColor="@color/azul_escolar"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/etDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_tech"
+                        android:backgroundTint="@color/gris_input_fondo"
+                        android:padding="16dp"
+                        android:hint="¿Qué necesitas hacer?"
+                        android:textSize="14sp"
+                        android:minLines="3"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/texto_secundario"
+                        android:layout_marginBottom="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="10dp">
+
+                            <TextView
+                                android:text="Materia"
+                                android:textColor="@color/azul_escolar"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <Spinner
+                                android:id="@+id/spinnerMateria"
+                                android:layout_width="match_parent"
+                                android:paddingLeft="10dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/bg_input_tech"
+                                android:backgroundTint="@color/gris_input_fondo"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="10dp">
+
+                            <TextView
+                                android:text="Fecha Límite"
+                                android:textColor="@color/azul_escolar"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <EditText
+                                android:id="@+id/etFecha"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="@drawable/bg_input_tech"
+                                android:backgroundTint="@color/gris_input_fondo"
+                                android:inputType="date"
+                                android:gravity="center"
+                                android:hint="DD/MM/AAAA"
+                                android:textSize="14sp"
+                                android:textColor="@color/texto_titulo"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:text="Nivel de Prioridad"
+                android:textColor="@color/texto_secundario"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioGroup
+                android:id="@+id/rgPrioridad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Descripción detallada"
-                android:inputType="textMultiLine"
-                android:minLines="2"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
+                <RadioButton
+                    android:id="@+id/rbAlta"
+                    android:text="Alta"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_tag_prioridad"
+                    android:textColor="@color/texto_tag_color"
+                    android:button="@null"
+                    android:textAlignment="center"
+                    android:paddingVertical="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
 
-            <EditText
-                android:id="@+id/etFecha"
+                <RadioButton
+                    android:id="@+id/rbMedia"
+                    android:text="Normal"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_tag_prioridad"
+                    android:textColor="@color/texto_tag_color"
+                    android:button="@null"
+                    android:textAlignment="center"
+                    android:paddingVertical="10dp"
+                    android:checked="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rbBaja"
+                    android:text="Baja"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_tag_prioridad"
+                    android:textColor="@color/texto_tag_color"
+                    android:button="@null"
+                    android:textAlignment="center"
+                    android:paddingVertical="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnGuardar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Fecha de entrega (DD/MM/AAAA)"
-                android:inputType="date"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="60dp"
+                android:text="Guardar Tarea"
+                android:textSize="16sp"
+                android:backgroundTint="@color/naranja_principal"
+                app:cornerRadius="16dp"
+                android:layout_marginBottom="10dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selecciona la Materia:"
-            android:textSize="16sp"
-            android:layout_marginBottom="5dp"/>
-
-        <Spinner
-            android:id="@+id/spinnerMateria"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="20dp"
-            android:background="@android:drawable/btn_dropdown"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prioridad:"
-            android:textSize="16sp"
-            android:layout_marginBottom="5dp"/>
-
-        <RadioGroup
-            android:id="@+id/rgPrioridad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="30dp">
-
-            <RadioButton
-                android:id="@+id/rbAlta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alta"
-                android:layout_weight="1"/>
-
-            <RadioButton
-                android:id="@+id/rbMedia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Media"
-                android:checked="true"
-                android:layout_weight="1"/>
-
-            <RadioButton
-                android:id="@+id/rbBaja"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Baja"
-                android:layout_weight="1"/>
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/btnGuardar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Guardar Tarea"
-            android:textSize="18sp"/>
-
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
